@@ -15,6 +15,9 @@
     </div>
     
     <%= render "layouts/footer" %>
+    <%- #This line basically checks if the environment is dev 
+    #and if yes, it adds the debug line with params as argument %>
+    <%= debug(params) if Rails.env.development? %>
     
   </body>
   
