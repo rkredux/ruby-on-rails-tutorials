@@ -9,17 +9,15 @@
 
   <body>
     <%= render "layouts/header" %>
-    
     <div class="container">
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
       <%= yield %>
+      <%= render "layouts/footer" %>
+      <%= debug(params) if Rails.env.development? %>
     </div>
     
-    <%= render "layouts/footer" %>
-    <%- #This line basically checks if the environment is dev 
-    #and if yes, it adds the debug line with params as argument %>
-    <%= debug(params) if Rails.env.development? %>
-    
   </body>
-  
-  
+
 </html>

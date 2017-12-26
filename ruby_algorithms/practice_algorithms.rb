@@ -1,16 +1,17 @@
-def quicksort(arr = [4,3,2,1])
+class WishMaker
+ 
+ def initialize 
+  @name = "Iamhereinhere"
+ end 
+ 
+ def Wishmaker.password 
+  @name
+ end
+ 
+end
+
+
+
+ 
+
   
-  if arr.length < 2
-   puts arr
-  else 
-   pivot = arr[0]
-   less = array.select do |elem|
-    elem < pivot
-   end 
-   great = array.select do |elem|
-    elem > pivot
-   end
-   puts less + pivot + great
-  end 
-  
-end 
