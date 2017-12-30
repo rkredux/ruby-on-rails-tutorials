@@ -14,9 +14,10 @@ class UsersController < ApplicationController
   def create 
     @user = User.new(user_params)  #not the final implementation
     if @user.save #if user was saved successfully in the database
-    puts "User created and saved"
-    flash[:success] = "You have successfully registered. Welcome to the Sample App"
-    redirect_to user_url(@user)
+      puts "User created and saved"
+      log_in @user
+      flash[:success] = "You have successfully registered. Welcome to the Sample App"
+      redirect_to user_url(@user)
     else
       render 'new'
     end
